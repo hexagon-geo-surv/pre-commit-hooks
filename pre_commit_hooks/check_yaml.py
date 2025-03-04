@@ -1,17 +1,17 @@
 from __future__ import annotations
 
 import argparse
+from collections.abc import Generator
+from collections.abc import Sequence
 from typing import Any
-from typing import Generator
 from typing import NamedTuple
-from typing import Sequence
 
 import ruamel.yaml
 
 yaml = ruamel.yaml.YAML(typ='safe')
 
 
-def _exhaust(gen: Generator[str, None, None]) -> None:
+def _exhaust(gen: Generator[str]) -> None:
     for _ in gen:
         pass
 
